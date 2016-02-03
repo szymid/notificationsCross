@@ -33,7 +33,13 @@ namespace notificationCross
 
         public string FormatJSONtoString()
         {
-            
+            StringBuilder jsonString = new StringBuilder();
+            jsonString.Append("{\n");
+            foreach (KeyValuePair<string, string> element in dictionaryJson)
+                jsonString.Append(String.Format("\"{0}\" : \"{1}\",\n", element.Key, element.Value));
+            jsonString.Remove(jsonString.Length - 2, 1);
+            jsonString.Append("}");
+            return jsonString.ToString();
         }
     }
 }
