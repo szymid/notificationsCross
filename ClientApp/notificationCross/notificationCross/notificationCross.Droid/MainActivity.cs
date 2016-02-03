@@ -37,42 +37,15 @@ namespace notificationCross.Droid
             Button[] notificationButtons = { notificationButton1, notificationButton2, notificationButton3, notificationButton4, notificationButton5 };
 
             foreach (Button button in notificationButtons)
-                button.Click += SendNotification;
-
-            notificationButton1.Click += delegate
-            {
-                Console.WriteLine("NotificationButton 1 Pressed");
-            };
-
-            notificationButton2.Click += delegate
-            {
-                Console.WriteLine("NotificationButton 2 Pressed");
-            };
-
-            notificationButton3.Click += delegate
-            {
-                Console.WriteLine("NotificationButton 3 Pressed");
-            };
-
-            notificationButton4.Click += delegate
-            {
-                Console.WriteLine("NotificationButton 4 Pressed");
-            };
-
-            notificationButton5.Click += delegate
-            {
-                Console.WriteLine("NotificationButton 5 Pressed");
-            };
-
-            
+                button.Click += SendNotification;            
 		}
 
         private void SendNotification(object sender, EventArgs e)
         {
             Button button = sender as Button;
             Console.WriteLine("Button {0} pressed", button.Text);
-            DataUpload dataUploader = new DataUpload("someUrl");
-            dataUploader.SendJSON(new NotificationData(person, (NotificationLevel)Convert.ToInt32(button.Text), new GpsLocationAndroid(10, 20)));
+            //DataUpload dataUploader = new DataUpload("someUrl");
+            //dataUploader.SendJSON(new NotificationData(person, (NotificationLevel)Convert.ToInt32(button.Text), new GpsLocationAndroid(10, 20)));
         }
 	}
 }
