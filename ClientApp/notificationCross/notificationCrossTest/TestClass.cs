@@ -19,5 +19,13 @@ namespace notificationCrossTest
             TestContext.WriteLine(data.FormatJSONtoString());
             Assert.Pass("Your first passing test");
         }
+
+        [Test]
+        public void NotificationEnumTest()
+        {
+            NotificationLevel level = NotificationLevel.Middle;
+            TestContext.WriteLine((int)level);
+            Assert.Pass("fuck");
+        }
     }
 }

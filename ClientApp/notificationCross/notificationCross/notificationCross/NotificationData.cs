@@ -10,11 +10,11 @@ namespace notificationCross
 
     public enum NotificationLevel
     {
-        Low = 0,
-        MiddleLow = 1,
-        Middle = 2,
-        MiddleHigh = 3,
-        High = 4
+        Low = 1,
+        MiddleLow = 2,
+        Middle = 3,
+        MiddleHigh = 4,
+        High = 5
     }
 
     public class NotificationData

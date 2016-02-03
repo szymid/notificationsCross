@@ -23,7 +23,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="65.5dp"
-        android:id="@+id/sureNameTextField"
+        android:id="@+id/surNameTextField"
         android:text="nazwisko" />
     <TextView
         android:text="Wybierz Zgłoszenie"

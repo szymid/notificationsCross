@@ -14,6 +14,7 @@ namespace notificationCross.Droid
 {
     public class GpsLocationAndroid : GpsLocation
     {
+        
         public GpsLocationAndroid() : base()
         {
 

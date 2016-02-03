@@ -79,7 +79,7 @@ namespace notificationCross.Droid
 			public const int notificationbutton5 = 2131034121;
 			
 			// aapt resource value: 0x7f050003
-			public const int sureNameTextField = 2131034115;
+			public const int surNameTextField = 2131034115;
 			
 			// aapt resource value: 0x7f050001
 			public const int textView1 = 2131034113;
