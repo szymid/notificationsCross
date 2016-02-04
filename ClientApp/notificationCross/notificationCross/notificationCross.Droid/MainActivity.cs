@@ -13,6 +13,8 @@ namespace notificationCross.Droid
 	public class MainActivity : Activity
 	{
         Person person;
+        private string name;
+        private string surname;
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -26,7 +28,6 @@ namespace notificationCross.Droid
             EditText nameEditText = FindViewById<EditText>(Resource.Id.firstNameTextField);
             EditText surnameEditText = FindViewById<EditText>(Resource.Id.surNameTextField);
 
-            person = new Person(nameEditText.Text, surnameEditText.Text);
 
             Button notificationButton1 = FindViewById<Button>(Resource.Id.notificationButton1);
             Button notificationButton2 = FindViewById<Button>(Resource.Id.notificationbutton2);
@@ -42,11 +43,17 @@ namespace notificationCross.Droid
 
         private void SendNotification(object sender, EventArgs e)
         {
+            EditText nameEditText = FindViewById<EditText>(Resource.Id.firstNameTextField);
+            EditText surnameEditText = FindViewById<EditText>(Resource.Id.surNameTextField);
+            person = new Person(nameEditText.Text, surnameEditText.Text);
             Button button = sender as Button;
             Console.WriteLine("Button {0} pressed", button.Text);
-            //DataUpload dataUploader = new DataUpload("someUrl");
-            //dataUploader.SendJSON(new NotificationData(person, (NotificationLevel)Convert.ToInt32(button.Text), new GpsLocationAndroid(10, 20)));
+            DataUpload dataUploader = new DataUpload("http://pluton.kt.agh.edu.pl/~ppiatek/jpwp/api.php");
+            dataUploader.SendJSON(new NotificationData(person, (NotificationLevel)Convert.ToInt32(button.Text), new GpsLocationAndroid(10, 20)));
+            button.Text = "Notification Sent!";
         }
+
+  
 	}
 }
 

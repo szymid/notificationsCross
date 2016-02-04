@@ -10,7 +10,7 @@ namespace notificationCross
 
         public DataUpload(string url)
         {
-            httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+            httpWebRequest = (HttpWebRequest)WebRequest.Create(new Uri(url));
         }
 
         async public void SendJSON(NotificationData data)

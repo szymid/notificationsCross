@@ -1,14 +1,23 @@
 <?php
 
-$host = "host=localhost";
+$host = "host=127.0.0.1";
 $port = "port=5432";
-$dbname = "dbname=info";
-$credentials = "user=postgres password=przemo2174";
+$dbname = "dbname=baza_projekt";
+$credentials = "user=sdawidow password=notifications";
+
 
 $db = pg_connect("$host $port $dbname $credentials");
-echo "Success";
+if(!$db)
+    echo 'Error';
+else
+    echo 'Success';
 
-$command = "SELECT * FROM reports;";
+echo 'rara';
+$date = date('Y-m-d H:i:s');
+//$result = $date->format('Y-m-d H:i:s');
+echo $date;
+
+/*$command = "SELECT * FROM notifications;";
 $ret = pg_query($db, $command);
 
 while($row = pg_fetch_row($ret))

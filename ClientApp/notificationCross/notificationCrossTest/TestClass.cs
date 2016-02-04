@@ -23,9 +23,8 @@ namespace notificationCrossTest
         [Test]
         public void NotificationEnumTest()
         {
-            NotificationLevel level = NotificationLevel.Middle;
-            TestContext.WriteLine((int)level);
-            Assert.Pass("fuck");
+            Assert.IsInstanceOf<NotificationLevel>((NotificationLevel)Enum.Parse(typeof(NotificationLevel), "Low"));
+            TestContext.WriteLine(((NotificationLevel)Enum.Parse(typeof(NotificationLevel), "Low")).ToString());
         }
     }
 }
