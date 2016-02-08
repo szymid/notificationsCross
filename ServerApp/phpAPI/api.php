@@ -44,8 +44,8 @@ $latitude = doubleval($data['Latitude']);
 $longitude = doubleval($data['Longitude']);
 $date = date('Y-m-d H:i:s');
 
-echo $name . ' ' . $surname . ' ' . $notification_id . ' ' . $latitude . ' ' . $longitude;
-
+echo $name . ' ' . $surname . ' ' . $notification_id . ' ' . $latitude . ' ' . $longitude . '</br>';
+echo $latitude + $longitude;
 
 /*$name = "Zbigniew";
 $surname = "Boniek";

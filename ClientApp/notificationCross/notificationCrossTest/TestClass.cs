@@ -15,7 +15,7 @@ namespace notificationCrossTest
         [Test]
         public void TestMethod()
         {
-            NotificationData data = new NotificationData(new Person("Zbigniew", "Boniek"), NotificationLevel.High, new GpsLocationAndroid(40, 50));
+            NotificationData data = new NotificationData(new Person("Zbigniew", "Boniek"), NotificationLevel.High, new GpsLocationAndroid(50.02341678941, 20.5673452123));
             TestContext.WriteLine(data.FormatJSONtoString());
             Assert.Pass("Your first passing test");
         }

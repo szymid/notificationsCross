@@ -27,8 +27,8 @@ namespace notificationCross
             dictionaryJson.Add("Name", person.Name);
             dictionaryJson.Add("Surname", person.Surname);
             dictionaryJson.Add("Notification", ((int)notificationLevel).ToString());
-            dictionaryJson.Add("Latitude", gpsLocation.Latitude.ToString());
-            dictionaryJson.Add("Longitude", gpsLocation.Longitude.ToString());
+            dictionaryJson.Add("Latitude", gpsLocation.Latitude.ToString().Replace(',', '.'));
+            dictionaryJson.Add("Longitude", gpsLocation.Longitude.ToString().Replace(',', '.'));
         }
 
         public string FormatJSONtoString()

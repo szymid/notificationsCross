@@ -12,19 +12,21 @@ if(!$db)
 else
     echo 'Success';
 
-echo 'rara';
 $date = date('Y-m-d H:i:s');
-//$result = $date->format('Y-m-d H:i:s');
-echo $date;
 
-/*$command = "SELECT * FROM notifications;";
+
+$command = "SELECT * FROM notifications;";
 $ret = pg_query($db, $command);
 
 while($row = pg_fetch_row($ret))
 {
-    echo "Name = ". $row[0] . "<br/>";
-    echo "Surname = ". $row[1] ."<br/>";
-    echo "Accident = ". $row[2] ."<br/><br/>";
+    echo "id = ". $row[0] . "<br/>";
+    echo "date = ". $row[1] ."<br/>";
+    echo "name = ". $row[2] ."<br/>";
+    echo "surname = ". $row[3] ."<br/>";
+    echo "notification = ". $row[4] ."<br/>";
+    echo "latitude = ". $row[5] ."<br/>";
+    echo "longitude = ". $row[6] ."<br/>";
 }
 echo "Operation done sucessfully";
 pg_close($db);

@@ -19,6 +19,7 @@ namespace notificationCross.Droid
         LocationManager locM;
         Location gpsLocation;
         Button[] notificationButtons;
+        TextView textView;
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -42,6 +43,8 @@ namespace notificationCross.Droid
             Button notificationButton3 = FindViewById<Button>(Resource.Id.notificationbutton3);
             Button notificationButton4 = FindViewById<Button>(Resource.Id.notificationbutton4);
             Button notificationButton5 = FindViewById<Button>(Resource.Id.notificationbutton5);
+            textView = FindViewById<TextView>(Resource.Id.textView2);
+
 
             notificationButtons = new Button[] { notificationButton1, notificationButton2, notificationButton3, notificationButton4, notificationButton5 };
 
@@ -72,7 +75,9 @@ namespace notificationCross.Droid
 
         public void OnLocationChanged(Location location)
         {
+            textView.Text = "Wybierz Zgloszenie:";
             gpsLocation = location;
+            Console.WriteLine(location.Latitude + "    " + location.Longitude);
             foreach (Button button in notificationButtons)
                 button.Enabled = true;
         }
