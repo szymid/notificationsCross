@@ -28,13 +28,25 @@
       <file leaf-file-name="api.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/api.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.214286" vertical-offset="0" max-vertical-offset="1254">
+            <state vertical-scroll-proportion="0.71428573" vertical-offset="362" max-vertical-offset="1254">
               <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
               <folding>
                 <marker date="1454604028861" expanded="true" signature="1243:1326" placeholder="INSERT INTO ..." />
                 <marker date="1454604028861" expanded="true" signature="1243:1335" placeholder="INSERT INTO ..." />
                 <marker date="1454604028861" expanded="true" signature="1243:1386" placeholder="INSERT INTO ..." />
                 <marker date="1454604028861" expanded="true" signature="1243:1387" placeholder="INSERT INTO ..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="maps.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/maps.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.19170403" vertical-offset="0" max-vertical-offset="892">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -60,10 +72,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="data.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/data.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.12780268" vertical-offset="0" max-vertical-offset="892">
+            <state vertical-scroll-proportion="-4.071429" vertical-offset="0" max-vertical-offset="684">
               <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <marker date="1454607944817" expanded="true" signature="362:375" placeholder="SELECT * FRO..reports..." />
@@ -88,6 +100,7 @@
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/api.php" />
         <option value="$PROJECT_DIR$/data.php" />
+        <option value="$PROJECT_DIR$/maps.html" />
       </list>
     </option>
   </component>
@@ -151,6 +164,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="DefaultHtmlFileTemplate" value="Html5" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -427,24 +441,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/api.php">
+    <entry file="file://$PROJECT_DIR$/data.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.214286" vertical-offset="0" max-vertical-offset="1254">
-          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+        <state vertical-scroll-proportion="-4.071429" vertical-offset="0" max-vertical-offset="684">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
-            <marker date="1454604028861" expanded="true" signature="1243:1326" placeholder="INSERT INTO ..." />
-            <marker date="1454604028861" expanded="true" signature="1243:1335" placeholder="INSERT INTO ..." />
-            <marker date="1454604028861" expanded="true" signature="1243:1386" placeholder="INSERT INTO ..." />
-            <marker date="1454604028861" expanded="true" signature="1243:1387" placeholder="INSERT INTO ..." />
+            <marker date="1454607944817" expanded="true" signature="362:375" placeholder="SELECT * FRO..reports..." />
+            <marker date="1454607944817" expanded="true" signature="362:389" placeholder="SELECT * FRO..notifications..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="418">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -456,13 +460,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12780268" vertical-offset="0" max-vertical-offset="892">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="-8.142858" vertical-offset="0" max-vertical-offset="418">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.71428573" vertical-offset="362" max-vertical-offset="1254">
+          <caret line="18" column="45" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
           <folding>
-            <marker date="1454607944817" expanded="true" signature="362:375" placeholder="SELECT * FRO..reports..." />
-            <marker date="1454607944817" expanded="true" signature="362:389" placeholder="SELECT * FRO..notifications..." />
+            <marker date="1454604028861" expanded="true" signature="1243:1326" placeholder="INSERT INTO ..." />
+            <marker date="1454604028861" expanded="true" signature="1243:1335" placeholder="INSERT INTO ..." />
+            <marker date="1454604028861" expanded="true" signature="1243:1386" placeholder="INSERT INTO ..." />
+            <marker date="1454604028861" expanded="true" signature="1243:1387" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/maps.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19170403" vertical-offset="0" max-vertical-offset="892">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

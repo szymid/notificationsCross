@@ -8,8 +8,8 @@ namespace notificationCross
 {
     public abstract class GpsLocation
     {
-        public double Latitude { get; private set; }
-        public double Longitude { get; private set; }
+        public double Latitude { get; protected set; }
+        public double Longitude { get; protected set; }
 
         public GpsLocation()
         {

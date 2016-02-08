@@ -5,16 +5,20 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Android.Locations;
 using notificationCross;
 
 namespace notificationCross.Droid
 {
 	[Activity (Label = "notificationCross.Droid", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : Activity
+	public class MainActivity : Activity, ILocationListener
 	{
         Person person;
-        private string name;
-        private string surname;
+        EditText nameEditText;
+        EditText surnameEditText;
+        LocationManager locM;
+        Location gpsLocation;
+        Button[] notificationButtons;
 
         protected override void OnCreate (Bundle bundle)
 		{
@@ -25,8 +29,12 @@ namespace notificationCross.Droid
 
             // Get our button from the layout resource,
             // and attach an event to it
-            EditText nameEditText = FindViewById<EditText>(Resource.Id.firstNameTextField);
-            EditText surnameEditText = FindViewById<EditText>(Resource.Id.surNameTextField);
+            nameEditText = FindViewById<EditText>(Resource.Id.firstNameTextField);
+            surnameEditText = FindViewById<EditText>(Resource.Id.surNameTextField);
+
+            locM = GetSystemService(Context.LocationService) as LocationManager;
+            if (locM.IsProviderEnabled(LocationManager.GpsProvider))
+                locM.RequestLocationUpdates(LocationManager.GpsProvider, 2000, 1, this);
 
 
             Button notificationButton1 = FindViewById<Button>(Resource.Id.notificationButton1);
@@ -35,10 +43,13 @@ namespace notificationCross.Droid
             Button notificationButton4 = FindViewById<Button>(Resource.Id.notificationbutton4);
             Button notificationButton5 = FindViewById<Button>(Resource.Id.notificationbutton5);
 
-            Button[] notificationButtons = { notificationButton1, notificationButton2, notificationButton3, notificationButton4, notificationButton5 };
+            notificationButtons = new Button[] { notificationButton1, notificationButton2, notificationButton3, notificationButton4, notificationButton5 };
 
             foreach (Button button in notificationButtons)
-                button.Click += SendNotification;            
+            {
+                button.Enabled = false;
+                button.Click += SendNotification;
+            }            
 		}
 
         private void SendNotification(object sender, EventArgs e)
@@ -49,12 +60,38 @@ namespace notificationCross.Droid
             Button button = sender as Button;
             Console.WriteLine("Button {0} pressed", button.Text);
             DataUpload dataUploader = new DataUpload("http://pluton.kt.agh.edu.pl/~ppiatek/jpwp/api.php");
-            dataUploader.SendJSON(new NotificationData(person, (NotificationLevel)Convert.ToInt32(button.Text), new GpsLocationAndroid(10, 20)));
+            dataUploader.SendJSON(new NotificationData(person, (NotificationLevel)Convert.ToInt32(button.Text), new GpsLocationAndroid(gpsLocation)));
             button.Text = "Notification Sent!";
         }
 
-  
-	}
+        private void ModifyLocation()
+        {
+            nameEditText.Text = "25";
+            surnameEditText.Text = "30";
+        }
+
+        public void OnLocationChanged(Location location)
+        {
+            gpsLocation = location;
+            foreach (Button button in notificationButtons)
+                button.Enabled = true;
+        }
+
+        public void OnProviderDisabled(string provider)
+        {
+            
+        }
+
+        public void OnProviderEnabled(string provider)
+        {
+            
+        }
+
+        public void OnStatusChanged(string provider, [GeneratedEnum] Availability status, Bundle extras)
+        {
+            
+        }
+    }
 }
 
 
