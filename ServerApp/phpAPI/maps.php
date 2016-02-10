@@ -53,8 +53,8 @@ pg_close($db);
 </head>
 <body>
 <div id="notificationsInfo"></div>
-<div id="data" style="width:150px;"></div>
-<div id="googleMap" style="width:500px; height:380px; float: right;"></div>
+<div id="data"></div>
+<div id="googleMap"></div>
 <script>
 
     var map;
@@ -73,27 +73,61 @@ pg_close($db);
 
     }
 
-    function AddMarker(location)
+    function AddMarker(location, id)
     {
         var marker = new google.maps.Marker({
             position: location,
             map: map,
-            title: 'Hello World!'
+            title: id
         });
         markers.push(marker);
     }
 
+    function SetMarkersOnAll(map)
+    {
+        markers.forEach(function(){
+            setMap(map);
+        });
+    }
+
+    function ClearMarkers(map)
+    {
+        markers.forEach(function(){
+           setMap(null);
+        });
+    }
+
+    function RemoveMarker(id)
+    {
+        for(var i = 0; i < markers.length; i++)
+        {
+            if(markers[i]['title'] == id)
+                markers[i].setMap(null);
+        }
+    }
+
     function CreateNotificationDiv(element)
     {
-        var text = 'Name: ' + element['name']  + '\n' +
+        var text = 'Id: ' + element['id'] + '\n' +
+            'Name: ' + element['name']  + '\n' +
             'Surname: ' + element['surname'] + '\n' +
             'Notification: ' + element['notification'] + '\n' +
+            'Date: ' + element['date'] + '\n' + 
             'Latitude: ' + element['latitude'] + '\n' +
             'Longitude: ' + element['longitude'];
 
         $('<div/>', {"class" : 'record'}).text(text).click(function()
         {
-            AddMarker({lat: parseFloat(element['latitude']), lng: parseFloat(element['longitude'])});
+            if($(this).attr('class') == 'record')
+            {
+                AddMarker({lat: parseFloat(element['latitude']), lng: parseFloat(element['longitude'])}, element['id']);
+                $(this).attr('class', 'clicked');
+            }
+            else
+            {
+                RemoveMarker(element['id']);
+                $(this).attr('class', 'record');
+            }
         }).appendTo("#data");
 
     }

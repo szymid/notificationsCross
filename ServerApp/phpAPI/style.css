@@ -1,7 +1,34 @@
+#data
+{
+    width: 35%;
+}
 
 .record
 {
     background-color: antiquewhite;
-    border: dashed;
-    border-color: brown;
+    width: inherit;
+    height: 15%;
+    border: brown dashed;
+    white-space: pre-wrap;
+    cursor: pointer;
+}
+
+.clicked
+{
+    background-color: aquamarine;
+    width: inherit;
+    height: 15%;
+    border: darkblue dashed;
+    white-space: pre-wrap;
+    cursor: pointer;
+}
+
+#googleMap
+{
+    position: absolute;
+    float: right;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 55%;
 }
