@@ -55,16 +55,30 @@ namespace notificationCross.Droid
             }            
 		}
 
-        private void SendNotification(object sender, EventArgs e)
+        private async void SendNotification(object sender, EventArgs e)
         {
             EditText nameEditText = FindViewById<EditText>(Resource.Id.firstNameTextField);
             EditText surnameEditText = FindViewById<EditText>(Resource.Id.surNameTextField);
             person = new Person(nameEditText.Text, surnameEditText.Text);
             Button button = sender as Button;
             Console.WriteLine("Button {0} pressed", button.Text);
+          
             DataUpload dataUploader = new DataUpload("http://pluton.kt.agh.edu.pl/~ppiatek/jpwp/api.php");
-            dataUploader.SendJSON(new NotificationData(person, (NotificationLevel)Convert.ToInt32(button.Text), new GpsLocationAndroid(gpsLocation)));
-            button.Text = "Notification Sent!";
+            bool result = await dataUploader.SendJSON(new NotificationData(person, (NotificationLevel)Convert.ToInt32(button.Text), new GpsLocationAndroid(gpsLocation)));
+            if (result)
+                ShowAlertDialog("Sukces", "Zgłoszenie zostało wysłane na serwer");
+            else
+                ShowAlertDialog("Brak dostępu do Internetu", "Znajdź dostęp do sieci i spróbuj ponownie");
+        }
+
+        private void ShowAlertDialog(string name, string text)
+        {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            AlertDialog dialog = builder.Create();
+            dialog.SetTitle(name);
+            dialog.SetMessage(text);
+            dialog.SetButton("OK", (object s, DialogClickEventArgs ev) => { });
+            dialog.Show();
         }
 
         private void ModifyLocation()

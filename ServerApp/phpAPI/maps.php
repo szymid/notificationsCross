@@ -112,7 +112,7 @@ pg_close($db);
             'Name: ' + element['name']  + '\n' +
             'Surname: ' + element['surname'] + '\n' +
             'Notification: ' + element['notification'] + '\n' +
-            'Date: ' + element['date'] + '\n' + 
+            'Date: ' + element['date'] + '\n' +
             'Latitude: ' + element['latitude'] + '\n' +
             'Longitude: ' + element['longitude'];
 
